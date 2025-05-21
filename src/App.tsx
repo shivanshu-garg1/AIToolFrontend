@@ -1,28 +1,29 @@
 import { useState } from "react";
-import axios from "axios";
 
 function App() {
   const [prompt, setPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {
-    if (!prompt.trim()) {
-      return;
-    }
+    if (!prompt.trim()) return;
 
     setIsLoading(true);
 
     try {
       const serverUrl = "https://aitoolbackend-xyu9.onrender.com/api/generate";
-      const res = await axios.post(
-        serverUrl,
-        { prompt },
-        { headers: { "Content-Type": "application/json" } }
-      );
 
+      const res = await fetch(serverUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const data = await res.json();
       setPrompt("");
 
-      const content = res.data.response || "No valid response from server.";
+      const content = data.response || "No valid response from server.";
 
       if (content && content !== "No valid response from server.") {
         navigator.clipboard.writeText(content).then(() => {
