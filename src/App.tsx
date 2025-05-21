@@ -8,7 +8,7 @@ function App() {
     if (!prompt.trim()) return;
 
     setIsLoading(true);
-    setPrompt("");
+    setPrompt(""); // Clear the input field
 
     try {
       const serverUrl = "https://aitoolbackend-xyu9.onrender.com/api/generate";
@@ -22,7 +22,6 @@ function App() {
       });
 
       const data = await res.json();
-      
 
       const content = data.response || "No valid response from server.";
 
@@ -40,6 +39,7 @@ function App() {
       setIsLoading(false);
     }
   };
+
 
   return (
     <div>
