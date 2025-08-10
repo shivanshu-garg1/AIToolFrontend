@@ -11,7 +11,7 @@ function App() {
     setPrompt(""); // Clear the input field
 
     try {
-      const serverUrl = "https://aitoolbackend-xyu9.onrender.com/api/generate";
+      const serverUrl = "https://aitoolbackend-8mvp.onrender.com/api/generate";
 
       const res = await fetch(serverUrl, {
         method: "POST",
