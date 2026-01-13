@@ -12,7 +12,7 @@ function App() {
 
     try {
       // const serverUrl = "https://aitoolbackend-8mvp.onrender.com/api/generate";
-      const serverUrl = "http://localhost:3000/api/generate";   
+      const serverUrl = "https://aitoolbackend-1.onrender.com/api/generate";   
 
       const res = await fetch(serverUrl, {
         method: "POST",
