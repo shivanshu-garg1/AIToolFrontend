@@ -8,7 +8,7 @@ function App() {
     if (!prompt.trim()) return;
 
     setIsLoading(true);
-    setPrompt(""); // Clear the input field
+    setPrompt("");
 
     try {
       // const serverUrl = "https://aitoolbackend-8mvp.onrender.com/api/generate";
